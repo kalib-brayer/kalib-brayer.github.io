@@ -30,11 +30,12 @@
       </div>
 
       <div class="form-row">
-        <label for="Trade or Sale">Trade or Sale:</label>
+        <label for="Trade or Sale">Trade, Sale or Combo:</label>
         <select id="Trade or Sale" name="Trade or Sale" required>
           <option value="">Exchange Type</option>
           <option value="Good">Trade</option>
           <option value="Played">Sale</option>
+          <option value="Played">Partial Trade Plus Cash</option>
         </select><br><br>
 
         <label for="sale-price">Sale Price:</label>
@@ -57,6 +58,15 @@
   </main>
 
   <script>
+    // Get the desiredCard parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const desiredCard = urlParams.get('desiredCard');
+
+    if (desiredCard) {
+      // Set the value of the desired-card field
+      document.getElementById('desired-card').value = desiredCard;
+    }
+
     //... (Your existing JavaScript code)...
   </script>
 </body>
